@@ -1,6 +1,6 @@
 const initialState = {
     value: 0,
-    color: purple
+    color: "purple"
 }
 
 const reducer = (state = initialState, action) => {
@@ -18,13 +18,13 @@ const reducer = (state = initialState, action) => {
             return {
                 value: state.value - 1,
                 color: state.color
-        }  
+            }  
     } else if
         (type === "INCREMENTBYFIVE") {
             return {
                 value: state.value + 5,
                 color: state.color
-        }
+            }
     } else if 
         (type === "DECREMENTBYFIVE") {
             return {
@@ -37,7 +37,13 @@ const reducer = (state = initialState, action) => {
                 value: state.value,
                 color: color
             }
+    } else if 
+        (type === "ADJUST_NUM") {           
+            return {
+                value: value,
+                color: state.color
+            }
         }
     
-    return state
+    return state;
 }

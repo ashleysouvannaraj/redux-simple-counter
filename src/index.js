@@ -22,3 +22,20 @@ decrementButtonFive.addEventListener('click', e => dispatch({ type: "DECREMENTBY
 
 const colorMenu = document.getElementById('color');
 colorMenu.addEventListener('change', e => dispatch({ type: "COLOR", color: color.value}));
+
+const numInput = document.getElementById('numInput');
+const adj_button = document.getElementById('adj_button');
+
+adj_button.addEventListener('click', e => {
+    if(numInput.value == null || numInput.value == "" || numInput.value == undefined){
+        dispatch({
+            type: "ADJUST_NUM",
+            value: 0
+            })
+    }else{
+        dispatch({
+        type: "ADJUST_NUM",
+        value: numInput.value
+        })
+    }
+});
